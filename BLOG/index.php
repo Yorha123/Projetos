@@ -8,15 +8,15 @@ include_once("templates/header.php");
         <p>O seu Blog de progrmação</p>
     </div>
     <div id="posts-container">
-        <?php foreach($posts as $posts): ?>
+        <?php foreach($posts as $post): ?>
         <div class="post-box">
-            <img src="<?= $BASE_URL?>/img/<?= $posts['img']?>" alt="<?=$posts['title']?>">
+            <img src="<?= $BASE_URL?>/img/<?= $post['img']?>" alt="<?=$post['title']?>">
             <h2 class="post-title">
-                <a href="<? $BASE_URL ?>post.php?id=<?= $posts['id'] ?>"><?=$posts['title']?></a>
+                <a href="<?= $BASE_URL ?>post.php?id=<?= $posts['id'] ?>"><?=$posts['title']?></a>
             </h2>
-            <p class="post-description"><?= $posts['description']?></p>
+            <p class="post-description"><?= $post['description']?></p>
             <div class="tags-container">
-                <?php foreach($posts['tags'] as $tag):?>
+                <?php foreach($post['tags'] as $tag):?>
                 <a href="#"><?= $tag?></a>
                 <?php endforeach;?>
             </div>
